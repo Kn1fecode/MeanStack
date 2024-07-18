@@ -1,0 +1,23 @@
+<h3>WOrking wh pipes</h3>
+<strong><p>NAme : {{name|uppercase}}</p></strong><br/>
+<strong><p>Catewgopry : {{category|lowercase}}</p></strong><br/>
+<strong><p>Cost : {{cost|currency}}</p></strong><br/>
+<strong><p>Cost : {{cost|currency:"Rs."}}</p></strong><br/>
+<strong>number,slice,date-done. to do-async,custom pipe:asmt</strong><br/>
+
+<p>{{str}}[0:4]: '{{str | slice:0:4}}'</p>
+
+    <p>Today is {{today | date}}</p>
+    <p>Or if you prefer, {{today | date:'fullDate'}}</p>
+    <p>The time is {{today | date:'h:mm a z'}}</p>
+
+    <p>pi (no formatting): {{pi | number}}</p>
+    <p>e (no formatting): {{e | number}}</p>
+
+    <div><code>observable|async</code>: Time: {{ time | async }}</div>
+
+
+    <!-- <code>promise|async</code>: 
+    <button (click)="clicked()">{{ arrived ? 'Reset' : 'Resolve' }}</button>
+    <span>Wait for it... {{ greeting | async }}</span> -->
+

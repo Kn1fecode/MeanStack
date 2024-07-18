@@ -1,0 +1,33 @@
+<div class="col-md-6 col-md-offset-3">
+        <h1 class="page-header">Login</h1>
+        <form [formGroup]="myForm" (ngsSubmit)="onSubmit(myForm.value)">
+          <div class="form-group">
+            <label>UserName</label>
+            <input type="text" class="form-control" formControlName="username" id="username" />
+            <div class="alert alert-danger" 
+            *ngIf="myForm.controls['username'].hasError('required') && myForm.controls['username'].touched">
+                Username required!
+            </div>
+          </div>
+          <div class="form-group">
+              
+            <label>Password</label>
+            <input type="password" class="form-control" formControlName="password" id="password"/>
+            <div class="alert alert-danger" 
+            *ngIf="myForm.controls['password'].hasError('required') && myForm.controls['password'].touched">
+            Password required!
+            </div>
+            <div class="alert alert-danger" 
+            *ngIf="myForm.controls['password'].hasError('maxlength') && myForm.controls['username'].touched">
+            Password should contain less than 8 characters
+            </div>
+            <div class="alert alert-danger" 
+            *ngIf="myForm.controls['password'].hasError('minlength') && myForm.controls['username'].touched">
+            Password should contain greater than 5 characters
+           </div>
+          </div>
+          <div>
+            <button type="submit" [disabled]="!myForm.valid" class="btn btn-success">SignIn</button>
+          </div>
+        </form>
+      </div>

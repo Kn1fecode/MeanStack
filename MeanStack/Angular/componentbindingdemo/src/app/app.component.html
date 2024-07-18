@@ -1,0 +1,129 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!-- <div style="text-align:center"> -->
+  
+<div class="container-fluid">
+    <div class="col-md-12">
+  
+  <h1 class="page header">
+    Welcome to ComponentBindingDemo
+  </h1>
+  </div>
+  <div class="col-md-10 col-md-offset">
+  <!-- <h2>{{id}}   {{name}}   {{cost}}</h2> -->
+  <h2>demo2 interpolation: {{product.id}}  {{product.name}}  {{product.cost}}  {{product.category}}</h2>
+  <!-- <h2>Assignment interpolation: {{employee.id}}  {{employee.name}}  {{employee.address}}  {{employee.salary}}  {{employee.designation}}   {{employee.mob_no}}  {{employee.deptid}}   {{employee.deptLoc}} </h2> -->
+  <!-- <h2>No of employee {{count}}</h2> -->
+ 
+
+<button (click)="callLogService()"
+class="btn btn-primary">Call logservice method</button>
+
+
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let name of participantnames">{{name}}
+  <button (click)="deleteNameFromService(name)"
+class="btn btn-danger pull-right">X</button>
+</li>
+</ul>
+
+
+<input type="text" #username/>&nbsp;
+<button (click)="addNameToService(username.value)"
+class="btn btn-success">Add name</button>
+  <br>
+ 
+  <input type="text" [(ngModel)]="product.name"/>
+  <input type="text" [(ngModel)]="product.cost"/>
+
+<button (click)="clickMe()"
+class="btn btn-primary">
+Click meeeee
+</button>
+<button (click)="getProductById(100)" class="btn btn-primary">
+    Get ID
+    </button>
+<h3>Ng Demo</h3>
+<button
+(click)="onToggle()"
+class="btn btn-primary">Show/Hide</button>
+<div *ngIf="toggle" style="background-color:dodgerblue; border:3px solid black; width:150x ;height:100px;"></div>
+
+
+
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let product of products">
+    {{product.name}}
+  </li>
+ 
+</ul>
+
+
+<table class="table table-bordered table-striped">
+  <thead><tr><th>Name</th>
+  <th>Cost</th>
+<th>Category</th></tr></thead>
+<tbody>
+  <tr *ngFor="let product of products">
+    <td>{{product.name}}</td>
+    <td>{{product.cost}}</td>
+    <td>{{product.category}}</td>
+    <td><button class="btn btn-primary">
+      Edit
+      
+    </button>&nbsp;&nbsp;
+    <button (click)="getProductById(product.id)" class="btn btn-danger">
+      Delete
+    </button>
+  </td>
+  </tr>
+</tbody>
+</table>
+
+<h2>Attribute directive-ngClass</h2>
+<button (click)="onChangeStyle()" class="btn btn-primary">ChangeStyle</button>
+<p [ngClass]="{highlight:high,normal:nor}">
+  Ng class paragprahss
+</p>
+
+
+<h2>Attribute directive-ngStyle</h2>
+<p [ngStyle]="{'background-color':color,'font-size':fontSize}">Ngstyle paragraph</p>
+  <img width="150" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+
+
+  
+  <button
+(click)="onToggle1()"
+class="btn btn-primary">Show/Hide</button>
+<div *ngIf="toggle1" >
+<table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Cost</th>
+  <th>Category</th></tr></thead>
+  <tbody>
+    <tr *ngFor="let emp of emps">
+        <td>{{emp.id}}</td>
+      <td>{{emp.name}}</td>
+      <td>{{emp.addresss}}</td>
+      <td>{{emp.salary}}</td>
+      <td>{{emp.designation}}</td>
+      <td>{{emp.mob_no}}</td>
+      <td>{{emp.deptid}}</td>
+      <td>{{emp.deptLoc}}</td>
+  
+      <!-- <button (click)="getEmployeeById(employee.id)" class="btn btn-danger">
+        Delete
+      </button> -->
+    
+    </tr>
+  </tbody>
+  </table>
+</div>
+<hr/>
+</div>
+ </div>
+
+
+

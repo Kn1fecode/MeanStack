@@ -1,0 +1,24 @@
+<h1 class="page-header">Todos</h1>
+
+<table class="table table-bordered table-striped">
+  <thead><tr>
+    <th>Name</th>
+  <th>Status</th>
+  <th></th>
+</tr></thead>
+<tbody>
+  <tr *ngFor="let task of tasks">
+    <td>{{task.name}}</td>
+    <td>{{task.status}}</td>
+    <td>
+    <button (click)="loadEditComponent(task._id)" class="btn btn-xs btn-primary">Edit</button> &nbsp;&nbsp;
+    <button
+    (click)="deleteFromService(task._id)"
+    class="btn btn-xs btn-danger">Delete</button>
+  </td>
+  </tr>
+</tbody>
+</table>
+
+<button (click)="loadTodoCreate()"
+class="btn btn-success">Add task</button>

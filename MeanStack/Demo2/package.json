@@ -1,0 +1,11 @@
+{
+  "name": "app.js",
+  "version": "1.0.0",
+  "description": "This is npm trial",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Priyanka Pimpalekar",
+  "license": "ISC"
+}
